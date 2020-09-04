@@ -50,9 +50,15 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Demo GC</name>
+			<url>https://maven.pkg.github.com/intact-financial-corporation-non-prod/demo-gc</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
