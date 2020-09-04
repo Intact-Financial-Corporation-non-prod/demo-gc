@@ -30,7 +30,7 @@ jobs:
 #     Build Docker image:
       - name: Build and tag image
         run: |
-          docker build -t "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}:latest" -t "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}:${GITHUB_SHA::8}" .
+          docker build -t "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}/myapp:latest" -t "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}/myapp:${GITHUB_SHA::8}" .
 
       - name: Docker login
         run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p ${{secrets.GITHUB_TOKEN}}
@@ -39,4 +39,4 @@ jobs:
       - name: Publish image
         env:
           IMAGE_NAME: $GITHUB_REPOSITORY
-        run: docker push "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}:latest"
+        run: docker push "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}/myapp:latest"
