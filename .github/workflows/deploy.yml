@@ -20,10 +20,10 @@ jobs:
       - name: Maven Package
         run: mvn -B clean compile package -DskipTests
 
-       - name: Deploy to GitHub packages
-         run: mvn -B deploy -DskipTests
-         env:
-            GITHUB_TOKEN: ${{ github.token }}
+      - name: Deploy to GitHub packages
+        run: mvn -B deploy -DskipTests
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
 #     Set global environment variables:
       - name: set global env
