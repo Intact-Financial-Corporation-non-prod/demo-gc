@@ -21,7 +21,9 @@ jobs:
 
 #       build project and run all tests & checks
       - name: Maven Verify
-        run: mvn -B clean verify
+        run: |
+             which mvn
+             mvn -B clean verify
 
 #       Upload code coverage report to Codecov
       - name: Test Coverage
