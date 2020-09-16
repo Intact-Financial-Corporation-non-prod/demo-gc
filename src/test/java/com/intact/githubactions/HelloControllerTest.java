@@ -1,4 +1,4 @@
-package com.antkorwin.githubactions;
+package com.intact.githubactions;
 
 import org.junit.jupiter.api.Test;
 
