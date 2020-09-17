@@ -49,3 +49,4 @@ jobs:
         run: |
           docker push "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}/myapp:latest"
           docker logout docker.pkg.github.com
+          cat /home/runner/.docker/config.json
