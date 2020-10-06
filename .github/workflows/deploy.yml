@@ -36,6 +36,7 @@ jobs:
       - name: Build and tag image
         run: |
           docker build -t "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}/myapp:latest" -t "${{ steps.global_env.outputs.DOCKERHUB_IMAGE_NAME }}/myapp:${GITHUB_SHA::8}" .
+          docker images
 
       - name: Docker login
         run: |
